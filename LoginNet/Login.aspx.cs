@@ -20,6 +20,7 @@ namespace LoginNet
             if(username=="administrador" && password == "1234")
             {
                 Session["Username"] = username;
+                Response.Redirect("Default.aspx");
             }
             else
             {
