@@ -11,7 +11,15 @@ namespace LoginNet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Username"] != null)
+            {
+                MessageLogin.InnerText = "Hola" + Session["Username"];
+            }
+            else
+            {
+                // Redirigir a la página de login si el usuario no está autenticado
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }
